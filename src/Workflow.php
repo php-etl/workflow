@@ -2,6 +2,7 @@
 
 namespace Kiboko\Component\Workflow;
 
+use Kiboko\Contract\Pipeline\JobCodeInterface;
 use Kiboko\Contract\Pipeline\SchedulingInterface;
 use Kiboko\Contract\Pipeline\WalkableInterface;
 use Kiboko\Contract\Satellite\RunnableInterface;
@@ -11,9 +12,9 @@ class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterf
     /** @var list<RunnableInterface> */
     private array $jobs = [];
 
-    public function job(RunnableInterface $job): self
+    public function job(JobCodeInterface $job, RunnableInterface $runnable): self
     {
-        $this->jobs[] = $job;
+        $this->jobs[] = $runnable;
 
         return $this;
     }
@@ -21,8 +22,8 @@ class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterf
     public function run(int $interval = 1000): int
     {
         $count = 0;
-        foreach ($this->jobs as $job) {
-            $count = $job->run($interval);
+        foreach ($this->jobs as $runnable) {
+            $count = $runnable->run($interval);
         }
 
         return $count;
@@ -31,8 +32,8 @@ class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterf
     /** @return \Iterator<RunnableInterface> */
     public function walk(): \Iterator
     {
-        foreach ($this->jobs as $job) {
-            yield $job;
+        foreach ($this->jobs as $runnable) {
+            yield $runnable;
         }
     }
 }

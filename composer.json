@@ -17,9 +17,8 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
-        "php-etl/pipeline-contracts": "0.4.*",
-        "php-etl/satellite-contracts": "0.1.*",
-        "php-etl/bucket-contracts": "0.2.*"
+        "php-etl/pipeline-contracts": "0.5.*",
+        "php-etl/satellite-contracts": "0.1.*"
     },
     "require-dev": {
         "phpunit/php-invoker": "^4.0",
