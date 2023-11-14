@@ -1,4 +1,4 @@
-Pipeline implementation
+Workflow implementation
 ===
 
 This package brings an implementation for the workflow component, aimed at combining tasks including 
