@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f03e20d111293b8122b98ff9ef934b57",
+    "content-hash": "58300b6d104e101b768a01e7790303f1",
     "packages": [
         {
             "name": "php-etl/bucket-contracts",

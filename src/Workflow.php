@@ -2,9 +2,9 @@
 
 namespace Kiboko\Component\Workflow;
 
-use Kiboko\Contract\Pipeline\JobCodeInterface;
 use Kiboko\Contract\Pipeline\SchedulingInterface;
 use Kiboko\Contract\Pipeline\WalkableInterface;
+use Kiboko\Contract\Satellite\CodeInterface;
 use Kiboko\Contract\Satellite\RunnableInterface;
 
 class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterface
@@ -12,7 +12,7 @@ class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterf
     /** @var list<RunnableInterface> */
     private array $jobs = [];
 
-    public function job(JobCodeInterface $job, RunnableInterface $runnable): self
+    public function job(CodeInterface $job, RunnableInterface $runnable): self
     {
         $this->jobs[] = $runnable;
 
