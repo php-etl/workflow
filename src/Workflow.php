@@ -2,10 +2,10 @@
 
 namespace Kiboko\Component\Workflow;
 
-use Kiboko\Contract\Pipeline\SchedulingInterface;
 use Kiboko\Contract\Pipeline\WalkableInterface;
 use Kiboko\Contract\Satellite\CodeInterface;
 use Kiboko\Contract\Satellite\RunnableInterface;
+use Kiboko\Contract\Satellite\SchedulingInterface;
 
 class Workflow implements SchedulingInterface, RunnableInterface, WalkableInterface
 {
