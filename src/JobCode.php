@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Kiboko\Component\Workflow;
 
+use Kiboko\Contract\Pipeline\JobCodeInterface;
 use Kiboko\Contract\Satellite\CodeInterface;
 
-final class JobCode implements CodeInterface
+final class JobCode implements JobCodeInterface, CodeInterface
 {
     private function __construct(
         private string $reference,
